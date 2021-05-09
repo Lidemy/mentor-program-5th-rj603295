@@ -9,9 +9,13 @@ request.get({
   }
 },
 (err, res, body) => {
-  const data = JSON.parse(body)
-  for (let i = 0; i < data.top.length; i++) {
-    console.log(`${data.top[i].viewers} ${data.top[i].game.name}`)
+  if (err) {
+    console.log('錯誤，請重試一次')
+  } else {
+    const data = JSON.parse(body)
+    for (let i = 0; i < data.top.length; i++) {
+      console.log(`${data.top[i].viewers} ${data.top[i].game.name}`)
+    }
   }
 }
 )

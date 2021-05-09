@@ -5,7 +5,11 @@ if (process.argv[2] === 'list') {
   request.get(
     'https://lidemy-book-store.herokuapp.com/books?_limit=20',
     (err, res, body) => {
-      getData(JSON.parse(body))
+      if (err) {
+        console.log('錯誤，請重試一次')
+      } else {
+        getData(JSON.parse(body))
+      }
     }
   )
 }
@@ -15,8 +19,9 @@ if (process.argv[2] === 'read') {
     (err, res, body) => {
       if (err) {
         console.log('錯誤，請重試一次')
+      } else {
+        console.log(JSON.parse(body).name)
       }
-      console.log(JSON.parse(body).name)
     }
   )
 }
@@ -26,8 +31,9 @@ if (process.argv[2] === 'delete') {
     (err, res, body) => {
       if (err) {
         console.log('刪除失敗')
+      } else {
+        console.log('刪除成功')
       }
-      console.log('刪除成功')
     }
   )
 }
@@ -41,8 +47,9 @@ if (process.argv[2] === 'create') {
   (err, res, body) => {
     if (err) {
       console.log('新增失敗')
+    } else {
+      console.log(`新增成功！，ID 為${JSON.parse(body).id}`)
     }
-    console.log(`新增成功！，ID 為${JSON.parse(body).id}`)
   })
 }
 if (process.argv[2] === 'update') {
@@ -51,13 +58,13 @@ if (process.argv[2] === 'update') {
     form: {
       name: process.argv[4]
     }
-
   },
   (err, res, body) => {
     if (err) {
       console.log('更新失敗')
+    } else {
+      console.log(`更新成功！，Name 為${JSON.parse(body).name}`)
     }
-    console.log(`更新成功！，Name 為${JSON.parse(body).name}`)
   })
 }
 
