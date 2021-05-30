@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>報名表單</title>
+</head>
+<body>
+  <section class="content">
+    <div class="wrapper">
+      <div class="content__list">
+        <h1>新拖延運動報名表單</h1>
+        <p>活動日期：2020/12/10 ~ 2020/12/11</p>
+        <p>活動地點：台北市大安區新生南路二段1號</p>
+        <br>
+        <p class="red">*必填</p>
+        <br>
+        <br>
+        <br>
+        <form action="">
+          <label for="name" class="important">暱稱</label><br>
+          <input type="text" name="name" placeholder="您的回答" oninput="checkInput()"><br>
+          <p class="check checkName">暱稱不可為空</p>
+          <label for="email" class="important">電子郵件</label><br>
+          <input type="email" name="email" placeholder="您的電子郵件" oninput="checkInput()"><br>
+          <p class="check checkEmail">電子郵件不可為空</p>
+          <label for="tel" class="important">手機號碼</label><br>
+          <input type="tel" name="tel" placeholder="您的手機號碼" oninput="checkInput()"><br>
+          <p class="check checkTel">手機號碼不可為空</p>
+          <label for="type" class="important">報名類型</label><br>
+          <input  type="radio" name="type" class="input-radio" oninput="checkInput()" value="躺在床上用想像力實作"> 躺在床上用想像力實作<br>
+          <input  type="radio" name="type" oninput="checkInput()" value="趴在地上滑手機找現成的"> 趴在地上滑手機找現成的<br>
+          <p class="check checkType">報名類型不可為空</p>
+          <label for="howToKnow" class="important">怎麼知道這個活動的？</label><br>
+          <input type="text" name="howToKnow" placeholder="您的回答" oninput="checkInput()"><br>
+          <p class="check checkKnow">怎麼知道這個活動的不可為空</p>
+          <label for="other">其他</label>
+          <p>對活動的一些建議</p><br>
+          <input type="text" name="other" placeholder="您的回答"><br>
+          <input type="submit" class="button" placeholder="您的回答"><br>
+        </form>
+        <p>請勿透過表單送出您的密碼。</p>
+        
+      </div>   
+    </div>
+  </section>
+  <footer>
+    <p>© 2020 © Copyright. All rights Reserved.</p>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>
