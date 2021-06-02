@@ -1,34 +1,34 @@
 const btn = document.querySelector('.button')
-function bindDom(dom) {
+function elBind(dom) {
   return document.querySelector(dom)
 }
 function checkInput() {
-  const name = bindDom('input[name=name]').value
-  const email = bindDom('input[name=email]').value
-  const tel = bindDom('input[name=tel]').value
+  const name = elBind('input[name=name]').value
+  const email = elBind('input[name=email]').value
+  const tel = elBind('input[name=tel]').value
   const typeAll = document.querySelectorAll('input[name=type]')
-  const howToKnow = bindDom('input[name=howToKnow]').value
-  const other = bindDom('input[name=other]').value
-  const checkName = bindDom('.checkName')
-  const checkEmail = bindDom('.checkEmail')
-  const checkTel = bindDom('.checkTel')
-  const checkType = bindDom('.checkType')
-  const checkKnow = bindDom('.checkKnow')
+  const howToKnow = elBind('input[name=howToKnow]').value
+  const other = elBind('input[name=other]').value
+  const checkName = elBind('.checkName')
+  const checkEmail = elBind('.checkEmail')
+  const checkTel = elBind('.checkTel')
+  const checkType = elBind('.checkType')
+  const checkKnow = elBind('.checkKnow')
   let checkAllType = false
-  let type
-  name === '' ? checkName.style.visibility = 'visible' : checkName.style.visibility = 'hidden'
-  email === '' ? checkEmail.style.visibility = 'visible' : checkEmail.style.visibility = 'hidden'
+  let signType
+  name === '' ? checkName.classList.add('visible') : checkName.classList.remove('visible')
+  email === '' ? checkEmail.classList.add('visible') : checkEmail.classList.remove('visible')
   for (let i = 0; i < typeAll.length; i++) {
     if (typeAll[i].checked) {
-      checkType.style.visibility = 'hidden'
+      checkType.classList.remove('visible')
       checkAllType = true
-      type = typeAll[i].value
+      signType = typeAll[i].value
       break
     }
-    checkType.style.visibility = 'visible'
+    checkType.classList.add('visible')
   }
-  tel === '' ? checkTel.style.visibility = 'visible' : checkTel.style.visibility = 'hidden'
-  howToKnow === '' ? checkKnow.style.visibility = 'visible' : checkKnow.style.visibility = 'hidden'
+  tel === '' ? checkTel.classList.add('visible') : checkTel.classList.remove('visible')
+  howToKnow === '' ? checkKnow.classList.add('visible') : checkKnow.classList.remove('visible')
   if (name !== '' && email !== '' && tel !== '' && howToKnow !== '' && checkAllType) {
     return {
       check: true,
@@ -37,7 +37,7 @@ function checkInput() {
       tel,
       howToKnow,
       other,
-      type
+      signType
     }
   } else {
     return { check: false }

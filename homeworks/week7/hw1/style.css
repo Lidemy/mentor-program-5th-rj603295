@@ -70,6 +70,12 @@ footer {
   color: red;
   visibility: hidden;
 }
+.hidden {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
 @media(max-width: 768px){
   .content__list {
     margin: 12px 0;

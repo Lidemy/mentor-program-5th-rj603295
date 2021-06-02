@@ -1,18 +1,18 @@
-const lists = document.querySelector('.content__lists')
-let list = document.querySelectorAll('input[type=checkbox]')
-lists.addEventListener('click', (e) => {
+const list = document.querySelector('.content__lists')
+let listItem = document.querySelectorAll('input[type=checkbox]')
+list.addEventListener('click', (e) => {
   if (e.target.classList.contains('content__cancel')) {
-    lists.removeChild(e.target.closest('.content__list'))
+    list.removeChild(e.target.closest('.content__list'))
   }
 })
 function inputCheck() {
-  list = document.querySelectorAll('input[type=checkbox]')
-  console.log(list)
-  for (let i = 0; i < list.length; i++) {
-    if (list[i].checked === true) {
-      list[i].setAttribute('checked', 'checked')
+  listItem = document.querySelectorAll('input[type=checkbox]')
+  console.log(listItem)
+  for (let i = 0; i < listItem.length; i++) {
+    if (listItem[i].checked === true) {
+      listItem[i].setAttribute('checked', 'checked')
     } else {
-      list[i].removeAttribute('checked')
+      listItem[i].removeAttribute('checked')
     }
   }
 }
@@ -30,7 +30,7 @@ function render() {
           <span class="content__cancel">X</span>
         </div> `
 
-  lists.innerHTML += str
+  list.innerHTML += str
   document.querySelector('.content__input').value = ''
 }
 window.addEventListener('keypress', (e) => {
