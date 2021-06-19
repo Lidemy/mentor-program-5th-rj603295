@@ -9,7 +9,7 @@
   $user = getUserFromUsername($_SESSION['username']);
   $nickname = $user['nickname'];
   $content = $_POST['content'];
-  $sql = sprintf("insert into jess_comments(nickname, content) values('%s', '%s')", 
+  $sql = sprintf("INSERT INTO jess_comments(nickname, content) VALUES('%s', '%s')", 
   $nickname,
   $content
 );

@@ -24,7 +24,7 @@
         if ($code === '1') {
           $msg = '資料不齊全';
         } else if ($code === '2') {
-          $msg = '帳號已被註冊';
+          $msg = '帳號或是密碼輸入錯誤';
         }
         echo '<h2 class="error">錯誤: '. $msg .'</h2>';
       }

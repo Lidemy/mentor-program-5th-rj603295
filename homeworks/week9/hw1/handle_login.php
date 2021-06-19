@@ -21,10 +21,8 @@
   }
   if ($result -> num_rows) {
     $_SESSION['username'] = $username;
-    $expire = time () + 3600 * 24 * 30;
-    setcookie("token", $token, $expire);
     header("Location: index.php");
   } else {
-    header("Location: index.php?errCode=2");
+    header("Location: login.php?errCode=2");
   }
 ?>

@@ -43,8 +43,6 @@
         $msg = 'Error';
         if ($code === '1') {
           $msg = '資料不齊全';
-        } else if ($code === '2') {
-          $msg = '帳號或是密碼輸入錯誤';
         }
         echo '<h2 class="error">錯誤: '. $msg .'</h2>';
       }
@@ -52,8 +50,8 @@
 
     <form action="handle_add_comment.php" method="POST" class="board_new-comment-form">
       <div>
-        <textarea name="content" id="" rows="5"></textarea>
         <?php if ($username) { ?>
+          <textarea name="content" id="" rows="5"></textarea>
         <input class="board__submit-btn" type="submit" />
       </div>
       <?php } else { ?>
