@@ -42,7 +42,7 @@ include可以用在迴圈；require不行。
 `strSQL = "SELECT * FROM users;"`  
 
 因此達到無帳號密碼，亦可登入網站。所以 SQL Injection 被俗稱為駭客的填空遊戲。  
-如要加以防範，以 php 來說，可以透過內建的 Prepared statement 功能，讓內建的程式自動去做字串的拼接，阻止使用者以注入的方式更改 SQL 的指令。
+如要加以防範，以資料庫來說來說，可以透過 Prepared statement 功能，讓內建的程式自動去做字串的拼接，阻止使用者以注入的方式更改 SQL 的指令。
 
 ##  請說明 XSS 的攻擊原理以及防範方法
 *****
