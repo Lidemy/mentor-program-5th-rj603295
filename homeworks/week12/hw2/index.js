@@ -28,7 +28,7 @@ function render(e) {
           <li>                
             <label>
               <input type="checkbox" oninput="inputCheck()"> 
-              <span class="content__text">${input}</span>  
+              <span class="content__text">${escape(input)}</span>  
             </label>
           </li>
           <span class="content__cancel">X</span>
