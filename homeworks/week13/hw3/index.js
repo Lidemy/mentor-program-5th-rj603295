@@ -1,4 +1,4 @@
-let data = []
+// let data = []
 const gameHeaderList = document.querySelector('.game-list')
 const gameTitle = document.querySelector('section h2')
 const gameStreamList = document.querySelector('.section__video')
@@ -56,46 +56,43 @@ function renderLoadBtn() {
 }
 function getGame(game, isAppend) {
   const url = `https://api.twitch.tv/kraken/streams?game=${game}&offset=${gameStreamIndex}&limit=20`
-  const request = new XMLHttpRequest()
-  request.onload = () => {
-    if (request.status >= 200 && request.status < 400) {
-      renderStreams(JSON.parse(request.responseText), isAppend)
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Client-ID': 'yfrp6xeih18ubmc8i3k16pvwd3qxpg',
+      Accept: 'application/vnd.twitchtv.v5+json'
+    }
+  })
+    .then((response) => response.json())
+    .then((jsonData) => {
+      renderStreams(jsonData, isAppend)
       judgeScroll = true
       if (!judgeDataLength) {
         renderLoadBtn()
       }
-    } else {
+    }).catch((err) => {
       alert('系統不穩定，請再試一次')
-    }
-  }
-  request.onerror = () => {
-    console.log('error')
-  }
-  request.open('GET', url, true)
-  request.setRequestHeader('Client-ID', 'yfrp6xeih18ubmc8i3k16pvwd3qxpg')
-  request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
-  request.send()
+      console.log('錯誤:', err)
+    })
 }
-function getTopFiveGame(e) {
+function getTopFiveGames(e) {
   const url = 'https://api.twitch.tv/kraken/games/top?limit=5'
-  const request = new XMLHttpRequest()
-  request.onload = () => {
-    if (request.status >= 200 && request.status < 400) {
-      data = JSON.parse(request.responseText)
-      currentGame = data.top[0].game.name
-      renderHeader(data)
-      getGame(currentGame, false)
-    } else {
-      alert('系統不穩定，請再試一次')
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Client-ID': 'yfrp6xeih18ubmc8i3k16pvwd3qxpg',
+      Accept: 'application/vnd.twitchtv.v5+json'
     }
-  }
-  request.onerror = () => {
-    console.log('error')
-  }
-  request.open('GET', url, true)
-  request.setRequestHeader('Client-ID', 'yfrp6xeih18ubmc8i3k16pvwd3qxpg')
-  request.setRequestHeader('Accept', 'application/vnd.twitchtv.v5+json')
-  request.send()
+  })
+    .then((response) => response.json()
+    ).then((jsonData) => {
+      currentGame = jsonData.top[0].game.name
+      renderHeader(jsonData)
+      getGame(currentGame, false)
+    }).catch((err) => {
+      alert('系統不穩定，請再試一次')
+      console.log('錯誤:', err)
+    })
 }
 gameHeaderList.addEventListener('click', (e) => {
   currentGame = e.target.innerText
@@ -115,4 +112,4 @@ window.addEventListener('scroll', () => {
     judgeScroll = false
   }
 })
-getTopFiveGame()
+getTopFiveGames()
