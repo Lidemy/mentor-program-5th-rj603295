@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/mentor-program-5th-rj603295/static/css/main.78920eca.chunk.css",
-    "main.js": "/mentor-program-5th-rj603295/static/js/main.a0280980.chunk.js",
-    "main.js.map": "/mentor-program-5th-rj603295/static/js/main.a0280980.chunk.js.map",
-    "runtime-main.js": "/mentor-program-5th-rj603295/static/js/runtime-main.3db0a28f.js",
-    "runtime-main.js.map": "/mentor-program-5th-rj603295/static/js/runtime-main.3db0a28f.js.map",
-    "static/js/2.c5cde37b.chunk.js": "/mentor-program-5th-rj603295/static/js/2.c5cde37b.chunk.js",
-    "static/js/2.c5cde37b.chunk.js.map": "/mentor-program-5th-rj603295/static/js/2.c5cde37b.chunk.js.map",
-    "static/js/3.1923131a.chunk.js": "/mentor-program-5th-rj603295/static/js/3.1923131a.chunk.js",
-    "static/js/3.1923131a.chunk.js.map": "/mentor-program-5th-rj603295/static/js/3.1923131a.chunk.js.map",
-    "index.html": "/mentor-program-5th-rj603295/index.html",
-    "static/css/main.78920eca.chunk.css.map": "/mentor-program-5th-rj603295/static/css/main.78920eca.chunk.css.map",
-    "static/js/2.c5cde37b.chunk.js.LICENSE.txt": "/mentor-program-5th-rj603295/static/js/2.c5cde37b.chunk.js.LICENSE.txt",
-    "static/media/style.css": "/mentor-program-5th-rj603295/static/media/cbx-on.c54ce2b3.svg"
+    "main.css": "/rj603295/React-TodoList/static/css/main.2544eb1d.chunk.css",
+    "main.js": "/rj603295/React-TodoList/static/js/main.a0280980.chunk.js",
+    "main.js.map": "/rj603295/React-TodoList/static/js/main.a0280980.chunk.js.map",
+    "runtime-main.js": "/rj603295/React-TodoList/static/js/runtime-main.3489f153.js",
+    "runtime-main.js.map": "/rj603295/React-TodoList/static/js/runtime-main.3489f153.js.map",
+    "static/js/2.c5cde37b.chunk.js": "/rj603295/React-TodoList/static/js/2.c5cde37b.chunk.js",
+    "static/js/2.c5cde37b.chunk.js.map": "/rj603295/React-TodoList/static/js/2.c5cde37b.chunk.js.map",
+    "static/js/3.1923131a.chunk.js": "/rj603295/React-TodoList/static/js/3.1923131a.chunk.js",
+    "static/js/3.1923131a.chunk.js.map": "/rj603295/React-TodoList/static/js/3.1923131a.chunk.js.map",
+    "index.html": "/rj603295/React-TodoList/index.html",
+    "static/css/main.2544eb1d.chunk.css.map": "/rj603295/React-TodoList/static/css/main.2544eb1d.chunk.css.map",
+    "static/js/2.c5cde37b.chunk.js.LICENSE.txt": "/rj603295/React-TodoList/static/js/2.c5cde37b.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/rj603295/React-TodoList/static/media/cbx-on.c54ce2b3.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.3db0a28f.js",
+    "static/js/runtime-main.3489f153.js",
     "static/js/2.c5cde37b.chunk.js",
-    "static/css/main.78920eca.chunk.css",
+    "static/css/main.2544eb1d.chunk.css",
     "static/js/main.a0280980.chunk.js"
   ]
 }
