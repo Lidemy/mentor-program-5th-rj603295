@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/mentor-program-5th-rj603295/todoList/static/css/main.64980db4.chunk.css",
-    "main.js": "/mentor-program-5th-rj603295/todoList/static/js/main.e0c244ed.chunk.js",
-    "main.js.map": "/mentor-program-5th-rj603295/todoList/static/js/main.e0c244ed.chunk.js.map",
-    "runtime-main.js": "/mentor-program-5th-rj603295/todoList/static/js/runtime-main.01c66580.js",
-    "runtime-main.js.map": "/mentor-program-5th-rj603295/todoList/static/js/runtime-main.01c66580.js.map",
-    "static/js/2.c5cde37b.chunk.js": "/mentor-program-5th-rj603295/todoList/static/js/2.c5cde37b.chunk.js",
-    "static/js/2.c5cde37b.chunk.js.map": "/mentor-program-5th-rj603295/todoList/static/js/2.c5cde37b.chunk.js.map",
-    "static/js/3.1923131a.chunk.js": "/mentor-program-5th-rj603295/todoList/static/js/3.1923131a.chunk.js",
-    "static/js/3.1923131a.chunk.js.map": "/mentor-program-5th-rj603295/todoList/static/js/3.1923131a.chunk.js.map",
-    "index.html": "/mentor-program-5th-rj603295/todoList/index.html",
-    "static/css/main.64980db4.chunk.css.map": "/mentor-program-5th-rj603295/todoList/static/css/main.64980db4.chunk.css.map",
-    "static/js/2.c5cde37b.chunk.js.LICENSE.txt": "/mentor-program-5th-rj603295/todoList/static/js/2.c5cde37b.chunk.js.LICENSE.txt",
-    "static/media/style.css": "/mentor-program-5th-rj603295/todoList/static/media/cbx-on.c54ce2b3.svg",
-    "static/media/logo.6ce24c58.svg": "/mentor-program-5th-rj603295/todoList/static/media/logo.6ce24c58.svg"
+    "main.css": "/mentor-program-5th-rj603295/static/css/main.78920eca.chunk.css",
+    "main.js": "/mentor-program-5th-rj603295/static/js/main.a0280980.chunk.js",
+    "main.js.map": "/mentor-program-5th-rj603295/static/js/main.a0280980.chunk.js.map",
+    "runtime-main.js": "/mentor-program-5th-rj603295/static/js/runtime-main.3db0a28f.js",
+    "runtime-main.js.map": "/mentor-program-5th-rj603295/static/js/runtime-main.3db0a28f.js.map",
+    "static/js/2.c5cde37b.chunk.js": "/mentor-program-5th-rj603295/static/js/2.c5cde37b.chunk.js",
+    "static/js/2.c5cde37b.chunk.js.map": "/mentor-program-5th-rj603295/static/js/2.c5cde37b.chunk.js.map",
+    "static/js/3.1923131a.chunk.js": "/mentor-program-5th-rj603295/static/js/3.1923131a.chunk.js",
+    "static/js/3.1923131a.chunk.js.map": "/mentor-program-5th-rj603295/static/js/3.1923131a.chunk.js.map",
+    "index.html": "/mentor-program-5th-rj603295/index.html",
+    "static/css/main.78920eca.chunk.css.map": "/mentor-program-5th-rj603295/static/css/main.78920eca.chunk.css.map",
+    "static/js/2.c5cde37b.chunk.js.LICENSE.txt": "/mentor-program-5th-rj603295/static/js/2.c5cde37b.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/mentor-program-5th-rj603295/static/media/cbx-on.c54ce2b3.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.01c66580.js",
+    "static/js/runtime-main.3db0a28f.js",
     "static/js/2.c5cde37b.chunk.js",
-    "static/css/main.64980db4.chunk.css",
-    "static/js/main.e0c244ed.chunk.js"
+    "static/css/main.78920eca.chunk.css",
+    "static/js/main.a0280980.chunk.js"
   ]
 }
