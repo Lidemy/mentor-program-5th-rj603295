@@ -15,11 +15,14 @@
     "styled-components": "^5.3.0",
     "web-vitals": "^1.1.2"
   },
+  "homepage": "https://lidemy.github.io/mentor-program-5th-rj603295/week21/hw2",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
