@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/css/main.d4e64ff7.chunk.css",
+    "main.js": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/main.e0c244ed.chunk.js",
+    "main.js.map": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/main.e0c244ed.chunk.js.map",
+    "runtime-main.js": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/runtime-main.586e8bb6.js",
+    "runtime-main.js.map": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/runtime-main.586e8bb6.js.map",
+    "static/js/2.c5cde37b.chunk.js": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/2.c5cde37b.chunk.js",
+    "static/js/2.c5cde37b.chunk.js.map": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/2.c5cde37b.chunk.js.map",
+    "static/js/3.1923131a.chunk.js": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/3.1923131a.chunk.js",
+    "static/js/3.1923131a.chunk.js.map": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/3.1923131a.chunk.js.map",
+    "index.html": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/index.html",
+    "static/css/main.d4e64ff7.chunk.css.map": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/css/main.d4e64ff7.chunk.css.map",
+    "static/js/2.c5cde37b.chunk.js.LICENSE.txt": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/js/2.c5cde37b.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/media/cbx-on.c54ce2b3.svg",
+    "static/media/logo.6ce24c58.svg": "/Lidemy/mentor-program-5th-rj603295/tree/master/homeworks/week21/hw1/todoList/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.586e8bb6.js",
+    "static/js/2.c5cde37b.chunk.js",
+    "static/css/main.d4e64ff7.chunk.css",
+    "static/js/main.e0c244ed.chunk.js"
+  ]
+}
