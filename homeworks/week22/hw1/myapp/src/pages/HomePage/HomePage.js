@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import { getPosts, deleteArticle } from '../../WebAPI'
 import { useEffect, useState, useContext } from 'react'
 import { AuthContext } from '../../contexts'
