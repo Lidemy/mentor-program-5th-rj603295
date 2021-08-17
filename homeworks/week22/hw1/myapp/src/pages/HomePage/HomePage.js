@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { getPosts, deleteArticle } from '../../WebAPI'
-import { useEffect, useState, useContext, useRef, useCallback } from 'react'
+import { useEffect, useState, useContext, useRef } from 'react'
 import { AuthContext } from '../../contexts'
 const Root = styled.div`
   width: 85%;
