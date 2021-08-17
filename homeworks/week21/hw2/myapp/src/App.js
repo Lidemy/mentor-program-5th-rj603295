@@ -70,7 +70,6 @@ function calculateWinner(square, pieceColor, x, y) {
       upDownCheck >= 4 || leftRightCheck >= 4 || 
       rightUpCheck >= 4 || leftUpCheck >= 4 
     ) {
-      console.log('贏家')
       return pieceColor;
 
     } else {
