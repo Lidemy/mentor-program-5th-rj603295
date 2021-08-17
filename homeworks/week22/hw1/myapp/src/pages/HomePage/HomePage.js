@@ -1,11 +1,8 @@
-
-
-import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import styled from 'styled-components'
+import { Link } from "react-router-dom"
 import { getPosts, deleteArticle } from '../../WebAPI'
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from 'react'
 import { AuthContext } from '../../contexts'
-
 const Root = styled.div`
   width: 85%;
   margin: 0 auto;
@@ -123,5 +120,5 @@ export default function HomePage() {
       )}
       </PageContainer> 
     </Root>
-  );
+  )
 }

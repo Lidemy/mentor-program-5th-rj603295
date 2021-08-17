@@ -1,7 +1,4 @@
-
-
-import styled from 'styled-components';
-
+import styled from 'styled-components'
 const Root = styled.div`
   width: 60%;
   margin: 0 auto;
@@ -11,9 +8,7 @@ const RightContainer = styled.div`
   margin-top: 20%;
   text-align: right;
 `
-
 export default function AboutPage() {
-
   return (
     <Root>
       <p>啦啦啦~~~ React 接 API BLOG~~~~</p>
@@ -25,5 +20,5 @@ export default function AboutPage() {
       <p>這樣看起來好像很文青</p>
       </RightContainer>
     </Root>
-  );
+  )
 }

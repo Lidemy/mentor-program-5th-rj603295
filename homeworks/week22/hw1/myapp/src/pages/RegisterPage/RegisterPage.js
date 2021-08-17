@@ -1,10 +1,10 @@
 
-import React, { useState, useContext } from 'react';
-import styled from 'styled-components';
-import { useHistory } from "react-router-dom";
+import React, { useState, useContext } from 'react'
+import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 import { getMe, register } from '../../WebAPI'
 import { setAuthToken } from '../../utils'
-import { AuthContext } from '../../contexts';
+import { AuthContext } from '../../contexts'
 const ErrorMessage = styled.div`
   color: red;
 `
@@ -29,9 +29,7 @@ export default function RegisterPage() {
   const history = useHistory()
   const handleSubmit = e => {
     setErrorMessage(null)
-    console.log(username, password, nickname)
     register(username, password, nickname).then(data => {
-      console.log(data)
       if(data.ok === 0){
         return setErrorMessage(data.message)
       }
@@ -63,6 +61,5 @@ export default function RegisterPage() {
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </form>
     </Container>
-    
-  );
+  )
 }

@@ -19,17 +19,17 @@ useEffect 可以幫助我們在 DOM 更新完成後執行某些 side effect 操�
     useState 的替代方案，當你需要更複雜的 state 邏輯，useReducer 會比 useState 更適用。 
     以下為程式碼使用範例：
     ```javascript
-      const initialState = {count: 0};
-      function reducer(state, action) {
-        switch (action.type) {
-            case 'increment':
-              return {count: state.count + 1};
-            case 'decrement':
-                return {count: state.count - 1};
-            default:
-                throw new Error();
-        }
+    const initialState = {count: 0};
+    function reducer(state, action) {
+      switch (action.type) {
+        case 'increment':
+          return {count: state.count + 1};
+        case 'decrement':
+            return {count: state.count - 1};
+        default:
+            throw new Error();
       }
+    }
     function Counter() {
           // 返回值：最新的state和dispatch函式
           const [state, dispatch] = useReducer(reducer, initialState);
@@ -54,7 +54,7 @@ useEffect 可以幫助我們在 DOM 更新完成後執行某些 side effect 操�
 4. useRef  
 useRef 可以存放可變的值，跟使用 useState 的區別在於，它不會導致 component re-render。
 5. useImperativeHandle  
-    useImperativeHandle 可以讓使用 ref 時能向父 component 暴露自定義的 instance 值。一如既往，在大多數的情況下應避免使用 ref 的命令式代碼。useImperativeHandle 應與 forwardRef 一同使用：
+    useImperativeHandle 可以讓使用 ref 時能向父元件傳送自定義的 instance 值。useImperativeHandle 應與 forwardRef 一同使用：
     ```javascript
     function FancyInput(props, ref) {
       const inputRef = useRef();
@@ -67,12 +67,14 @@ useRef 可以存放可變的值，跟使用 useState 的區別在於，它不會
     }
     FancyInput = forwardRef(FancyInput);
     ```
-    在這個範例中，render <FancyInput ref={inputRef} /> 的父 component 能呼叫 inputRef.current.focus()。
+    在這個範例中，render <FancyInput ref={inputRef} /> 的父元件能呼叫 inputRef.current.focus()。
 
 6. useLayoutEffect  
     使用方式與 useEffect 一樣，只是差別在觸發的時間點是在所有 DOM 改變之後才會同步呼叫。  
 7. useDebugValue  
-    useDebugValue 用在 React 開發者工具中顯示自定義Hook 的標籤。 useDebugValue 接受一個格式化函數作為可選的第二個參數。 該函數只有在 Hook 被檢查時才會被調用。 它接受 debug 值作為參數，並且會返回一個格式化的顯示值。
+    於一般 Project 中較少使用，於 custom hook 中較常使用。  
+    useDebugValue 用在 React 開發者工具中顯示自定義Hook 的標籤。 useDebugValue 接受一個格式化函數作為可選的第二個參數。 該函數只有在 Hook 被檢查時才會被呼叫。 它接受 debug 值作為參數，並且會返回一個格式化的顯示值。  
+    參考用法：https://github.com/puxiao/react-hook-tutorial/blob/master/15%20useDebugValue%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95.md
 ## 請列出 class component 的所有 lifecycle 的 method，並大概解釋觸發的時機點
 *****
 ### React 的生命週期可以分為三個階段：
@@ -116,7 +118,7 @@ function Welcome(props) {
     
 - 渲染機制  
     class：即使狀態沒變化，只要調用了 setstate function 就會觸發 component 的重新渲染。  
-    functional：對函式組件來說，只有狀態值真正改變時，才會觸發 render 函式的調用。因此某些狀況下 functional component 自動幫你擋掉了一些不必要的重新渲染，提升整體效能。
+    functional：只有狀態值真正改變時，才會觸發 render 函式的調用。因此某些狀況下 functional component 自動幫你擋掉了一些不必要的重新渲染，提升整體效能。
 - this 的使用  
     Function Component 因為是個 function，所以沒有 this，或者說 this 指向的物件並不是 component 本身。這提供了幾個好處，一是語法上的簡潔性，不用再寫像是 this.state.xxx 的冗長語法，也不用煩惱在傳入事件處理器時要根據使用場景來 bind(this)。
 - 簡單比較   
@@ -126,7 +128,7 @@ function Welcome(props) {
     | 編譯  | 較快 (少了繼承 class 轉成 ES5)     |        |
     | 程式碼  | 較簡潔      |       |
     | this的使用  | 無, 較少      | 需要使用 bind 來或其他方法來正確取得 this 的值       |
-    | React生命週期  | React 生命週期方法不能在功能組件中使用。     | React 生命週期方法可以在類組件中使用（例如，componentDidMount）。  |
+    | React生命週期  | React 生命週期方法不能在功能元件中使用。     | React 生命週期方法可以在類元件中使用（例如，componentDidMount）。  |
 
 ## uncontrolled 跟 controlled component 差在哪邊？要用的時候通常都是如何使用？
 *****

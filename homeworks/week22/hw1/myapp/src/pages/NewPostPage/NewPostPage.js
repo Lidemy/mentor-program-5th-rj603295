@@ -1,9 +1,7 @@
-
-
-import styled from 'styled-components';
-import { useHistory} from "react-router-dom";
+import styled from 'styled-components'
+import { useHistory} from "react-router-dom"
 import { createPost } from '../../WebAPI'
-import { useState } from 'react';
+import { useState } from 'react'
 const ErrorMessage = styled.div`
   color: red;
 `
@@ -43,7 +41,6 @@ export default function NewPostPage() {
         return setErrorMessage(data.message)
       }
       history.push("/")
-
     })
   }
   return (
@@ -54,14 +51,12 @@ export default function NewPostPage() {
           標題：<input value={title} onChange={e => setTitle(e.target.value)}/>
         </div>
         <div>
-        內容：<textarea value={article} onChange={e => setArticle(e.target.value)} />
+          內容：<textarea value={article} onChange={e => setArticle(e.target.value)} />
         </div>
-
         <button>送出</button>
         <ErrorMessage>{errorMessage}</ErrorMessage>
       </form>
-      </Container>
-      
+      </Container>  
     </Root>
-  );
+  )
 }

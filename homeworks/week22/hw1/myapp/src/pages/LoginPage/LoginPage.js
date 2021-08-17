@@ -1,10 +1,9 @@
-
-import React, { useState, useContext } from 'react';
-import styled from 'styled-components';
-import { useHistory } from "react-router-dom";
+import React, { useState, useContext } from 'react'
+import styled from 'styled-components'
+import { useHistory } from "react-router-dom"
 import { login, getMe } from '../../WebAPI'
 import { setAuthToken } from '../../utils'
-import { AuthContext } from '../../contexts';
+import { AuthContext } from '../../contexts'
 const ErrorMessage = styled.div`
   color: red;
 `
@@ -29,7 +28,7 @@ export default function LoginPage() {
   const handleSubmit = e => {
     setErrorMessage(null)
     login(username, password).then(data => {
-      if(data.ok === 0){
+      if (data.ok === 0){
         return setErrorMessage(data.message)
       }
       setAuthToken(data.token)
@@ -41,7 +40,6 @@ export default function LoginPage() {
         setUser(response.data)
         history.push("/")
       })
-
     })
   }
   return (
@@ -56,7 +54,6 @@ export default function LoginPage() {
       <button>登入</button>
       {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
     </form>
-    </Container>
-    
-  );
+    </Container>    
+  )
 }
