@@ -14,7 +14,7 @@
     "styled-components": "^5.3.0",
     "web-vitals": "^1.1.2"
   },
-  "homepage": "https://lidemy.github.io/mentor-program-5th-rj603295/week21/hw3",
+  "homepage": "https://lidemy.github.io/mentor-program-5th-rj603295/week22/hw1",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
