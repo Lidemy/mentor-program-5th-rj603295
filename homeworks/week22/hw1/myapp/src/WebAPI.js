@@ -1,14 +1,11 @@
 import { getAuthToken } from './utils'
 const BASE_URL = 'https://student-json-api.lidemy.me'
-
 export const getPosts = (page=1) => {
   return fetch(`${BASE_URL}/posts?_sort=createdAt&_order=desc&_limit=5&_page=${page}`)
   .then(res => {
-    let articleAmout = res.headers.get("x-total-count");
+    let articleAmout = res.headers.get("x-total-count")
     return {res: res.json(), amount: articleAmout}
   })
-  //.then(res => res.headers)
-
 }
 export const login = (username, password) => {
   return fetch(`${BASE_URL}/login`, {
@@ -55,7 +52,7 @@ export const createPost = (payload) => {
     method: "POST",
     headers: {
       authorization: `Bearer ${token}`,
-      "content-type": "application/json",
+      "content-type": "application/json"
     },
     body: JSON.stringify(payload),
   }).then((res) => res.json());

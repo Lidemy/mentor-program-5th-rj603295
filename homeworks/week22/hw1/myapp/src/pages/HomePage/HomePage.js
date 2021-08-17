@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { getPosts, deleteArticle } from '../../WebAPI'
-import { useEffect, useState, useContext, useRef } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { AuthContext } from '../../contexts'
 const Root = styled.div`
   width: 85%;
@@ -76,7 +76,7 @@ export default function HomePage() {
   }, [])
   useEffect(() => {
     let arr = []
-    for(let i=1; i<=Math.ceil(amount/5); i++){
+    for(let i = 1; i <= Math.ceil(amount/5); i++){
       arr.push(i)
     }
     setPage(arr)
@@ -98,7 +98,7 @@ export default function HomePage() {
   const handleDelete = (id) => {
     deleteArticle(id)
     .then(
-      posts => {
+      () => {
         getPosts(currentPage)
         .then(
           posts => {
@@ -116,7 +116,7 @@ export default function HomePage() {
       {posts.map(post => <Post user={user} handleDelete={handleDelete} key={post.id} post={post} />)}
       <PageContainer>
       {pagination.map(page =>
-          <Page key={page} value={page} $active={currentPage === page.toLocaleString()} onClick={(e) => {handlePage(e)}}>{page}</Page>
+        <Page key={page} value={page} $active={currentPage === page.toLocaleString()} onClick={(e) => {handlePage(e)}}>{page}</Page>
       )}
       </PageContainer> 
     </Root>

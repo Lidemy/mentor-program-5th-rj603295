@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useParams} from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getArticle } from '../../WebAPI'
 import { useEffect, useState } from 'react'
 const Root = styled.div`

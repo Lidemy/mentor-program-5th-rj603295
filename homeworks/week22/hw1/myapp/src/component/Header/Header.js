@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import styled from 'styled-components'
-import { Link, useLocation, useHistory } from "react-router-dom"
+import { Link, useLocation, useHistory } from 'react-router-dom'
 import { AuthContext } from '../../contexts'
 import { setAuthToken } from '../../utils'
 const HeaderContainer = styled.div`

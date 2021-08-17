@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
-import { useHistory } from "react-router-dom"
+import { useHistory } from 'react-router-dom'
 import { login, getMe } from '../../WebAPI'
 import { setAuthToken } from '../../utils'
 import { AuthContext } from '../../contexts'
@@ -25,7 +25,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("")
   const [errorMessage, setErrorMessage] = useState()
   const history = useHistory()
-  const handleSubmit = e => {
+  const handleSubmit = () => {
     setErrorMessage(null)
     login(username, password).then(data => {
       if (data.ok === 0){
