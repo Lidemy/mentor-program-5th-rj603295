@@ -6,8 +6,8 @@ import { useState } from 'react';
 let id = 3
 function App() {
   const [todos, setTodos] = useState([
-    {id:1, content:'abc', isDone:true},
-    {id:2, content:'bbc', isDone: false}
+    {id:1, content:'abc', isDone: true, isEdit: false, editValue: 'abc'},
+    {id:2, content:'bbc', isDone: false, isEdit: false, editValue: "bbc"}
   ])
   const [value, setValue] = useState('')
   const [filter, setFilter] = useState('all')
@@ -15,7 +15,8 @@ function App() {
     if (e.key === 'Enter') {
       setTodos([{
         id,
-        content: value
+        content: value,
+        editValue: value
       }, ...todos])
       setValue('')
       id++
@@ -42,6 +43,46 @@ function App() {
   const handleFilterDone = status => {
     setFilter(status)
   }
+  const handleEditTodo = (e, id) => {
+    if (e.target.nodeName === "DIV"){
+      setTodos(todos.map(todo => {
+        if (todo.id !== id) return todo
+        return {
+          ...todo,
+          isEdit: !todo.isEdit
+        }
+      }))
+    }
+    if (e.target.nodeName === "BUTTON" && e.target.innerText === "done"){
+      setTodos(todos.map(todo => {
+        if (todo.id !== id) return todo
+        return {
+          ...todo,
+          content: todo.editValue,
+          isEdit: !todo.isEdit,
+        }
+      }))
+    }
+    if (e.target.nodeName === "BUTTON" && e.target.innerText === "cancel"){
+      setTodos(todos.map(todo => {
+        if (todo.id !== id) return todo
+        return {
+          ...todo,
+          editValue: todo.content,
+          isEdit: !todo.isEdit,
+        }
+      }))
+    }
+  }
+  const handleEditInputChange = (e, id) => {
+    setTodos(todos.map(todo => {
+        if (todo.id !== id) return todo
+        return {
+          ...todo,
+          editValue: e.target.value,
+        }
+      }))
+  }
   return (
     <div className="App">
       <div className="content">
@@ -54,7 +95,7 @@ function App() {
         {
           todos
           .filter(todo => filter === 'completed' ? todo.isDone : filter === 'active' ? !todo.isDone : true)
-          .map(todo => <TodoItem key={todo.id} todo={todo} handleDeleteTodo={handleDeleteTodo} handleToggleIsDone={handleToggleIsDone} />)
+          .map(todo => <TodoItem key={todo.id} todo={todo} handleEditInputChange={handleEditInputChange} handleEditTodo={handleEditTodo} handleDeleteTodo={handleDeleteTodo} handleToggleIsDone={handleToggleIsDone} />)
         }   
       </div>
       <div className="content__status" role="group" aria-label="Basic radio toggle button group">
