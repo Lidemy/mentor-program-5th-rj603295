@@ -1,41 +1,42 @@
-
-
 import styled from 'styled-components'
-import LoginPage from '../../pages/LoginPage'
-import HomePage from '../../pages/HomePage'
-import Header from '../Header/Header'
-import ArticlePage from "../../pages/ArticlePage"
-import RegisterPage from "../../pages/RegisterPage"
-import NewPostPage from "../../pages/NewPostPage"
-import AboutPage from "../../pages/AboutPage"
 import {
   HashRouter as Router,
   Switch,
   Route,
   Redirect
-} from "react-router-dom"
-import { useEffect, useState } from 'react'
-import { AuthContext } from '../../contexts'
+} from 'react-router-dom'
+import { useEffect, useState, React } from 'react'
+import LoginPage from '../../pages/LoginPage'
+import HomePage from '../../pages/HomePage'
+import Header from '../Header/Header'
+import ArticlePage from '../../pages/ArticlePage'
+import RegisterPage from '../../pages/RegisterPage'
+import NewPostPage from '../../pages/NewPostPage'
+import AboutPage from '../../pages/AboutPage'
+import AuthContext from '../../contexts'
 import { getMe } from '../../WebAPI'
 import { getAuthToken } from '../../utils'
+
 const Root = styled.div`
   padding-top: 64px;
 `
 function App() {
   const [user, setUser] = useState(null)
   useEffect(() => {
-    let token = getAuthToken()
+    const token = getAuthToken()
     if (token) {
-      getMe().then(response => {
+      getMe().then((response) => {
         if (response.ok) {
           setUser(response.data)
         }
       })
-    } 
+    }
   }, [])
-
   return (
-    <AuthContext.Provider value={{user, setUser}}>
+    <AuthContext.Provider value={{
+      user,
+      setUser
+    }}>
     <Root>
       <Router>
         <Header />
@@ -62,7 +63,7 @@ function App() {
       </Router>
     </Root>
     </AuthContext.Provider>
-  );
+  )
 }
 
-export default App;
+export default App

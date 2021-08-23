@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import { useEffect, useState, useContext, React } from 'react'
 import { Link } from 'react-router-dom'
 import { getPosts, deleteArticle } from '../../WebAPI'
-import { useEffect, useState, useContext } from 'react'
-import { AuthContext } from '../../contexts'
+import AuthContext from '../../contexts'
+
 const Root = styled.div`
   width: 85%;
   margin: 0 auto;
@@ -28,7 +29,7 @@ const Page = styled.div`
   margin-right: 5px;
   padding: 5px;
   cursor: pointer;
-  ${props => props.$active && 
+  ${(props) => props.$active &&
     `
       background: rgba(0, 0, 0, 0.1);
       font-weight: bold;
@@ -61,64 +62,64 @@ export default function HomePage() {
   const [posts, setPosts] = useState([])
   const [amount, setAmount] = useState(0)
   const [pagination, setPage] = useState([])
-  const [currentPage, setCurrentPage] = useState("1")
+  const [currentPage, setCurrentPage] = useState('1')
   const { user } = useContext(AuthContext)
   useEffect(() => {
     getPosts()
-    .then(
-      posts => {
-        setAmount(posts.amount)
-        return posts.res
-      }
-    ).then(
-      posts => setPosts(posts)
-    )
+      .then(
+        (posts) => {
+          setAmount(posts.amount)
+          return posts.res
+        }
+      ).then(
+        (posts) => setPosts(posts)
+      )
   }, [])
   useEffect(() => {
-    let arr = []
-    for(let i = 1; i <= Math.ceil(amount/5); i++){
+    const arr = []
+    for (let i = 1; i <= Math.ceil(amount / 5); i++) {
       arr.push(i)
     }
     setPage(arr)
   }, [amount])
 
   const handlePage = (e) => {
-    let page = e.target.innerText
+    const page = e.target.innerText
     setCurrentPage(page)
     getPosts(page)
-    .then(
-      posts => {
-        setAmount(posts.amount)
-        return posts.res
-      }
-    ).then(
-      posts => setPosts(posts)
-    )
+      .then(
+        (posts) => {
+          setAmount(posts.amount)
+          return posts.res
+        }
+      ).then(
+        (posts) => setPosts(posts)
+      )
   }
   const handleDelete = (id) => {
     deleteArticle(id)
-    .then(
-      () => {
-        getPosts(currentPage)
-        .then(
-          posts => {
-            setAmount(posts.amount)
-            return posts.res
-          }
-        ).then(
-          posts => setPosts(posts)
-        )
-      }
-    )
+      .then(
+        () => {
+          getPosts(currentPage)
+            .then(
+              (posts) => {
+                setAmount(posts.amount)
+                return posts.res
+              }
+            ).then(
+              (posts) => setPosts(posts)
+            )
+        }
+      )
   }
   return (
     <Root>
-      {posts.map(post => <Post user={user} handleDelete={handleDelete} key={post.id} post={post} />)}
+      {posts.map((post) => <Post user={user} handleDelete={handleDelete} key={post.id} post={post} />)}
       <PageContainer>
-      {pagination.map(page =>
-        <Page key={page} value={page} $active={currentPage === page.toLocaleString()} onClick={(e) => {handlePage(e)}}>{page}</Page>
+      {pagination.map((page) =>
+        <Page key={page} value={page} $active={currentPage === page.toLocaleString()} onClick={(e) => { handlePage(e) }}>{page}</Page>
       )}
-      </PageContainer> 
+      </PageContainer>
     </Root>
   )
 }

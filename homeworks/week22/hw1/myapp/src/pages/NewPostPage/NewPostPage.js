@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { useHistory} from "react-router-dom"
+import { useState, React } from 'react'
+import { useHistory } from 'react-router-dom'
 import { createPost } from '../../WebAPI'
-import { useState } from 'react'
+
 const ErrorMessage = styled.div`
   color: red;
 `
@@ -31,16 +32,19 @@ const Container = styled.div`
   }
 `
 export default function NewPostPage() {
-  const [title, setTitle] = useState("")
-  const [article, setArticle] = useState("")
+  const [title, setTitle] = useState('')
+  const [article, setArticle] = useState('')
   const [errorMessage, setErrorMessage] = useState()
   const history = useHistory()
   const handleSubmit = () => {
-    createPost({title: title, body: article}).then(data => {
-      if(data.ok === 0){
+    createPost({
+      title,
+      body: article
+    }).then((data) => {
+      if (data.ok === 0) {
         return setErrorMessage(data.message)
       }
-      history.push("/")
+      history.push('/')
     })
   }
   return (
@@ -48,15 +52,15 @@ export default function NewPostPage() {
       <Container>
       <form onSubmit={handleSubmit}>
         <div>
-          標題：<input value={title} onChange={e => setTitle(e.target.value)}/>
+          標題：<input value={title} onChange={(e) => setTitle(e.target.value)}/>
         </div>
         <div>
-          內容：<textarea value={article} onChange={e => setArticle(e.target.value)} />
+          內容：<textarea value={article} onChange={(e) => setArticle(e.target.value)} />
         </div>
         <button>送出</button>
         <ErrorMessage>{errorMessage}</ErrorMessage>
       </form>
-      </Container>  
+      </Container>
     </Root>
   )
 }

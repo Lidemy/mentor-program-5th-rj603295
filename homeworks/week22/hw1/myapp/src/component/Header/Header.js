@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-
 import styled from 'styled-components'
 import { Link, useLocation, useHistory } from 'react-router-dom'
-import { AuthContext } from '../../contexts'
+import AuthContext from '../../contexts'
 import { setAuthToken } from '../../utils'
+
 const HeaderContainer = styled.div`
   height: 64px;
   display: flex;
@@ -35,7 +35,7 @@ const Nav = styled(Link)`
   cursor: pointer;
   color: black;
   text-decoration: none;
-  ${props => props.$active && 
+  ${(props) => props.$active &&
   `
     background: rgba(0, 0, 0, 0.1)
   `}
@@ -58,7 +58,6 @@ export default function Header() {
     if (location.pathname !== '/') {
       history.push('/')
     }
-
   }
   return (
     <HeaderContainer>
@@ -71,10 +70,10 @@ export default function Header() {
         </NavbarList>
       </LeftContainer>
       <NavbarList>
-      {!user &&<Nav to="/register" $active={location.pathname === '/register'}>註冊</Nav>}
+      {!user && <Nav to="/register" $active={location.pathname === '/register'}>註冊</Nav>}
         {!user && <Nav to="/login" $active={location.pathname === '/login'}>登入</Nav>}
         {user && <Nav to="" onClick={handleLogout}>登出</Nav>}
       </NavbarList>
     </HeaderContainer>
-  );
+  )
 }
