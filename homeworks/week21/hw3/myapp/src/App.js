@@ -1,10 +1,10 @@
-import './style.css';
-import { useState, useEffect, useRef, useCallback } from 'react';
-import React from 'react';
+import './style.css'
+import React, { useState } from 'react'
+
 function App() {
   const input = React.useRef()
   const [value, setValue] = useState({
-    name: '', 
+    name: '',
     email: '',
     tel: '',
     type: '',
@@ -12,34 +12,34 @@ function App() {
     other: ''
   })
   const [validation, setValidation] = useState({
-    name: true, 
+    name: true,
     email: true,
     tel: true,
     type: true,
-    howToKnow: true,
+    howToKnow: true
   })
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(!validation.name && !validation.email && !validation.tel && !validation.type && !validation.howToKnow) {
+    if (!validation.name && !validation.email && !validation.tel && !validation.type && !validation.howToKnow) {
       alert(`暱稱: ${value.name}\n電子郵件: ${value.email}\n手機號碼: ${value.tel}\n報名類型: ${value.type}\n怎麼知道這個活動的: ${value.howToKnow}\n其他: ${value.other}`)
     }
   }
   const handleInputChange = (e) => {
     e.preventDefault()
-    let propertyName = e.target.name
+    const propertyName = e.target.name
     setValue({
-        name: value.name, 
-        email: value.email,
-        tel: value.tel,
-        type: value.type,
-        howToKnow: value.howToKnow,
-        other: value.other,
-        [propertyName]: e.target.value
-      })
-    setValue(prevState => {
+      name: value.name,
+      email: value.email,
+      tel: value.tel,
+      type: value.type,
+      howToKnow: value.howToKnow,
+      other: value.other,
+      [propertyName]: e.target.value
+    })
+    setValue((prevState) => {
       handleInputValidation(propertyName, prevState)
       return prevState
-    });
+    })
   }
 
   const handleInputValidation = (propertyName, prevState) => {
@@ -53,7 +53,7 @@ function App() {
         [propertyName]: true
       }
       )
-    } else if (prevState[propertyName] !== ''){
+    } else if (prevState[propertyName] !== '') {
       setValidation({
         name: validation.name,
         email: validation.email,
@@ -89,8 +89,8 @@ function App() {
           <input type="tel" name="tel" placeholder="您的手機號碼" value={value.tel} onChange={handleInputChange} /><br />
           <p className={validation.tel ? 'check checkTel visible red' : 'check checkTel hidden'}>手機號碼不可為空</p>
           <label htmlFor="type" className="important">報名類型</label><br />
-          <input  type="radio" name="type" className="input-radio" onChange={handleInputChange} value="躺在床上用想像力實作" checked={value.type === "躺在床上用想像力實作" ? true: false} /> 躺在床上用想像力實作<br />
-          <input  type="radio" name="type" onChange={handleInputChange} value="趴在地上滑手機找現成的" checked={value.type === "趴在地上滑手機找現成的" ? true: false} /> 趴在地上滑手機找現成的<br />
+          <input type="radio" name="type" className="input-radio" onChange={handleInputChange} value="躺在床上用想像力實作" checked={value.type === '躺在床上用想像力實作'} /> 躺在床上用想像力實作<br />
+          <input type="radio" name="type" onChange={handleInputChange} value="趴在地上滑手機找現成的" checked={value.type === '趴在地上滑手機找現成的'} /> 趴在地上滑手機找現成的<br />
           <p className={validation.type ? 'check checkType visible red' : 'check checkType hidden'}>報名類型不可為空</p>
           <label htmlFor="howToKnow" className="important">怎麼知道這個活動的？</label><br />
           <input type="text" name="howToKnow" placeholder="您的回答" value={value.howToKnow} onChange={handleInputChange} /><br />
@@ -101,15 +101,14 @@ function App() {
           <input type="submit" className="button" placeholder="您的回答" /><br />
         </form>
         <p>請勿透過表單送出您的密碼。</p>
-        
-      </div>   
+      </div>
     </div>
   </section>
   <footer>
     <p>© 2020 © Copyright. All rights Reserved.</p>
   </footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
