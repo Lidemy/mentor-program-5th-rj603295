@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/mentor-program-5th-rj603295/week23/hw1/static/css/main.0cbadb10.chunk.css",
+    "main.js": "/mentor-program-5th-rj603295/week23/hw1/static/js/main.d77599cf.chunk.js",
+    "main.js.map": "/mentor-program-5th-rj603295/week23/hw1/static/js/main.d77599cf.chunk.js.map",
+    "runtime-main.js": "/mentor-program-5th-rj603295/week23/hw1/static/js/runtime-main.46934421.js",
+    "runtime-main.js.map": "/mentor-program-5th-rj603295/week23/hw1/static/js/runtime-main.46934421.js.map",
+    "static/js/2.e72b8ae8.chunk.js": "/mentor-program-5th-rj603295/week23/hw1/static/js/2.e72b8ae8.chunk.js",
+    "static/js/2.e72b8ae8.chunk.js.map": "/mentor-program-5th-rj603295/week23/hw1/static/js/2.e72b8ae8.chunk.js.map",
+    "index.html": "/mentor-program-5th-rj603295/week23/hw1/index.html",
+    "static/css/main.0cbadb10.chunk.css.map": "/mentor-program-5th-rj603295/week23/hw1/static/css/main.0cbadb10.chunk.css.map",
+    "static/js/2.e72b8ae8.chunk.js.LICENSE.txt": "/mentor-program-5th-rj603295/week23/hw1/static/js/2.e72b8ae8.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/mentor-program-5th-rj603295/week23/hw1/static/media/cbx-on.c54ce2b3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.46934421.js",
+    "static/js/2.e72b8ae8.chunk.js",
+    "static/css/main.0cbadb10.chunk.css",
+    "static/js/main.d77599cf.chunk.js"
+  ]
+}
